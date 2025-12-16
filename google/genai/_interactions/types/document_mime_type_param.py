@@ -15,24 +15,11 @@
 
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Optional
-from typing_extensions import Literal
+from __future__ import annotations
 
-from .._models import BaseModel
-from .document_mime_type import DocumentMimeType
+from typing import Union
+from typing_extensions import Literal, TypeAlias
 
-__all__ = ["DocumentContent"]
+__all__ = ["DocumentMimeTypeParam"]
 
-
-class DocumentContent(BaseModel):
-    """A document content block."""
-
-    type: Literal["document"]
-    """Used as the OpenAPI type discriminator for the content oneof."""
-
-    data: Optional[str] = None
-
-    mime_type: Optional[DocumentMimeType] = None
-    """The mime type of the document."""
-
-    uri: Optional[str] = None
+DocumentMimeTypeParam: TypeAlias = Union[str, Literal["application/pdf"]]
